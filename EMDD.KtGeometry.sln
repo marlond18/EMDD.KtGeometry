@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{98E2D858-336E-4F66-9A0C-CC38FECD55FA}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{76A6233A-20C9-4854-B3A7-5917C5908297}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DD1780D1-56E0-4898-9C52-8AA264429F8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{BE0F1323-82AA-45E6-B9B6-A7E92E159122}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMDD.KtGeometry", "src\EMDD.KtGeometry.csproj", "{65A56C47-D325-420E-8B06-598F6066D0C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KtGeometryTest", "test\unit\KtGeometryTest.csproj", "{7734C34B-CDED-41B7-B04F-D3FDA256F8A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "manual", "manual", "{22610562-6F43-4633-BBBC-94DE5862989F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestForm", "test\manual\TestForm.csproj", "{E149E34C-82C5-450F-9AF5-90C7AB732E02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65A56C47-D325-420E-8B06-598F6066D0C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A56C47-D325-420E-8B06-598F6066D0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A56C47-D325-420E-8B06-598F6066D0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A56C47-D325-420E-8B06-598F6066D0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7734C34B-CDED-41B7-B04F-D3FDA256F8A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7734C34B-CDED-41B7-B04F-D3FDA256F8A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7734C34B-CDED-41B7-B04F-D3FDA256F8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7734C34B-CDED-41B7-B04F-D3FDA256F8A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E149E34C-82C5-450F-9AF5-90C7AB732E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E149E34C-82C5-450F-9AF5-90C7AB732E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E149E34C-82C5-450F-9AF5-90C7AB732E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E149E34C-82C5-450F-9AF5-90C7AB732E02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE0F1323-82AA-45E6-B9B6-A7E92E159122} = {DD1780D1-56E0-4898-9C52-8AA264429F8B}
+		{65A56C47-D325-420E-8B06-598F6066D0C7} = {76A6233A-20C9-4854-B3A7-5917C5908297}
+		{7734C34B-CDED-41B7-B04F-D3FDA256F8A3} = {BE0F1323-82AA-45E6-B9B6-A7E92E159122}
+		{22610562-6F43-4633-BBBC-94DE5862989F} = {DD1780D1-56E0-4898-9C52-8AA264429F8B}
+		{E149E34C-82C5-450F-9AF5-90C7AB732E02} = {22610562-6F43-4633-BBBC-94DE5862989F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E6BC2F0-EB86-4A7B-A401-DB36670B681E}
+	EndGlobalSection
+EndGlobal
