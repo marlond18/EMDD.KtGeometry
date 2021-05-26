@@ -1,4 +1,4 @@
-<img align="left" src="src/EMDD.KtEquatable/Images/emd2.png" width="120" height="50">
+<img align="left" src="src/EMDD.KtGeometry/docs/Images/emd2.png" width="120" height="50">
 
 &nbsp;
 
