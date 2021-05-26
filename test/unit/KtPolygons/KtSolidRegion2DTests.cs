@@ -3,7 +3,7 @@ using EMDD.KtGeometry.KtPolygons;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
-using polygonMethods = EMDD.KtGeometry.KtPolygons.CreateSpecialRegionMethods;
+using PolygonMethods = EMDD.KtGeometry.KtPolygons.CreateSpecialRegionMethods;
 using KtExtensions;
 using CircularStack;
 using EMDD.KtGeometry.KtLines._2D;
@@ -127,7 +127,7 @@ namespace KtGeometryTest.KtPolygons
 
         private static List<KtPoint2D> CreateArbitraryRegion()
         {
-            var listPoints = new List<KtPoint2D>
+            return new List<KtPoint2D>
             {
                 new KtPoint2D(0, 4),
                 new KtPoint2D(5, 5),
@@ -135,7 +135,6 @@ namespace KtGeometryTest.KtPolygons
                 new KtPoint2D(-1, -1),
                 new KtPoint2D(3, -4)
             };
-            return listPoints;
         }
 
         [TestMethod]
@@ -150,7 +149,7 @@ namespace KtGeometryTest.KtPolygons
         [TestMethod]
         public void AreaTest()
         {
-            var region = polygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
+            var region = PolygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
             Assert.AreEqual(region.Area(), 40 * 30);
             KtRegion rec = (new List<KtPoint2D>
             {
@@ -179,14 +178,14 @@ namespace KtGeometryTest.KtPolygons
         [TestMethod]
         public void AreaCentroidTest()
         {
-            var region = polygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
+            var region = PolygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
             Assert.AreEqual(region.AreaCentroid(), new KtPoint2D(2, 2) * 30 * 40);
         }
 
         [TestMethod]
         public void CentroidTest()
         {
-            var region = polygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
+            var region = PolygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
             Assert.AreEqual(region.Centroid(), new KtPoint2D(2, 2));
             KtRegion rec = (new List<KtPoint2D>
             {
@@ -208,21 +207,21 @@ namespace KtGeometryTest.KtPolygons
         [TestMethod]
         public void ContainsTest()
         {
-            var region = polygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
+            var region = PolygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
             Assert.AreEqual(region.Contains(new KtPoint2D(2 - 20, 2 - 15)), true);
         }
 
         [TestMethod]
         public void CornerCountTest()
         {
-            var region = polygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
+            var region = PolygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
             Assert.AreEqual(region.Count, 4);
         }
 
         [TestMethod]
         public void ClearTest()
         {
-            var region = polygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
+            var region = PolygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
             region.Clear();
             Assert.AreEqual(region.Count, 0);
         }
@@ -230,7 +229,7 @@ namespace KtGeometryTest.KtPolygons
         [TestMethod]
         public void IsConvexTest()
         {
-            var region = polygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
+            var region = PolygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
             Assert.AreEqual(region.IsConvex, false);
             KtRegion region2 = (CreateArbitraryRegion());
             Assert.AreEqual(region2.IsConvex, true);
@@ -257,14 +256,14 @@ namespace KtGeometryTest.KtPolygons
         [TestMethod]
         public void PointInRegionTest()
         {
-            var region = polygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
+            var region = PolygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
             Assert.AreEqual(region.Inscribes(new KtPoint2D(3, 10)), true);
         }
 
         [TestMethod]
         public void PointInCornerOfRegionTest()
         {
-            var region = polygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
+            var region = PolygonMethods.Rectangle(new KtPoint2D(2, 2), 40, 30, true);
             Assert.AreEqual(region.Inscribes(new KtPoint2D(22, -13)), false);
             Assert.AreEqual(region.Inscribes(new KtPoint2D(22, 17)), false);
             Assert.AreEqual(region.Inscribes(new KtPoint2D(-18, 17)), false);
@@ -546,8 +545,8 @@ namespace KtGeometryTest.KtPolygons
         [TestMethod]
         public void PolygonDifferenceTest2()
         {
-            var rectangular1 = new KtPolygon2D((KtSolidRegion)polygonMethods.Rectangle((10, 20), 4, 6, true));
-            var rectangular2 = new KtPolygon2D((KtSolidRegion)polygonMethods.Rectangle((9, 18.5), 2, 3, true));
+            var rectangular1 = new KtPolygon2D((KtSolidRegion)PolygonMethods.Rectangle((10, 20), 4, 6, true));
+            var rectangular2 = new KtPolygon2D((KtSolidRegion)PolygonMethods.Rectangle((9, 18.5), 2, 3, true));
             var rectangular3 = new KtPolygon2D(new KtSolidRegion(new KtPoint2D[] { (8.0, 23.0), (12.0, 23.0), (12.0, 17.0), (10, 17), (10, 20), (8, 20) }));
             var actual = rectangular1 - rectangular2;
             Assert.AreEqual(actual, rectangular3);
@@ -647,7 +646,7 @@ namespace KtGeometryTest.KtPolygons
         public void RegionInscribesSegments()
         {
             var segments = new KtSegments2D((10, 17), (10, 20), (8, 20));
-            var rectangular1 = (KtSolidRegion)polygonMethods.Rectangle((10, 20), 4, 6, true);
+            var rectangular1 = (KtSolidRegion)PolygonMethods.Rectangle((10, 20), 4, 6, true);
             Assert.IsTrue(rectangular1.Inscribes(segments));
         }
     }
