@@ -66,6 +66,10 @@ var plane = new EMDD.KtGeometry.KtPolygons.KtPolygon2D(rectRegion);
 	- Area calculation
 	- Polygon clipping
 	- Translation/rotation
-
+### Quaternions
+- representation of graphical rotation and orientation of objects 
+```c#
+var quatern= new KtQuaternion(w, x, y,z);
+```
 ### todo
 - better documentation
